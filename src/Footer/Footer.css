@@ -1,0 +1,46 @@
+.app__footer{
+display: flex;
+justify-content: center;
+align-items: flex-start;
+gap: 60px;
+margin-top:4rem;
+}
+
+.app__footer-navigation{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+gap: 15px;
+}
+
+.app__footer-header{
+color: #000;
+font-family: Inter;
+font-size: 32px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+
+.app__footer-subtext{
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 10px;
+}
+
+.app__footer-subtext li{
+  list-style-type: none; /* Remove default bullet points */
+  text-decoration: none; /* Remove underline */
+}
+
+.app__footer-subtext a{
+  text-decoration: none;
+  color: #000;
+  font-family: Karla;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}

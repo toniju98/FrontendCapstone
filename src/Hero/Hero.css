@@ -1,0 +1,82 @@
+
+.app__hero{
+    height: 308px;
+    background: #495E57;
+    margin-top:2rem;
+}
+
+.app__hero-text{
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: flex-start;
+gap:0.5rem;
+}
+
+.app__hero-header{
+color: #F4CE14;
+font-family: Markazi Text;
+font-size: 64px;
+width:100%;
+font-style: normal;
+font-weight: 500;
+line-height: 40px; /* 62.5% */
+}
+
+.app__hero-subheader{
+color: #FFF;
+font-family: Markazi Text;
+font-size: 32px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.app__hero-paragraph{
+color: #FFF;
+font-family: Karla;
+font-size: 20px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+}
+
+.app__hero-content{
+display: flex;
+justify-content: center;
+align-items: flex-start;
+gap: 294px;
+padding:2rem;
+}
+
+.app__hero-textButton{
+display: flex;
+width: 400px;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+gap: 2rem;
+
+
+}
+
+.app__hero-button{
+display: flex;
+padding: 10px 34px;
+justify-content: center;
+align-items: center;
+color: #000;
+font-family: Karla;
+font-size: 18px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+border-radius: 8px;
+background: #F4CE14;
+border: none;
+outline: none;
+cursor: pointer;
+}
+
+
+
