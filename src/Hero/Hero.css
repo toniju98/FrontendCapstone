@@ -1,6 +1,6 @@
 
 .app__hero{
-    height: 308px;
+    height: 19.25rem;
     background: #495E57;
     margin-top:2rem;
 }
@@ -16,17 +16,17 @@ gap:0.5rem;
 .app__hero-header{
 color: #F4CE14;
 font-family: Markazi Text;
-font-size: 64px;
+font-size: 4rem;
 width:100%;
 font-style: normal;
 font-weight: 500;
-line-height: 40px; /* 62.5% */
+line-height: 2.5rem; /* 62.5% */
 }
 
 .app__hero-subheader{
 color: #FFF;
 font-family: Markazi Text;
-font-size: 32px;
+font-size: 2rem;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
@@ -35,7 +35,7 @@ line-height: normal;
 .app__hero-paragraph{
 color: #FFF;
 font-family: Karla;
-font-size: 20px;
+font-size: 1.25rem;
 font-style: normal;
 font-weight: 500;
 line-height: normal;
@@ -43,9 +43,10 @@ line-height: normal;
 
 .app__hero-content{
 display: flex;
+flex-direction: row;
 justify-content: center;
 align-items: flex-start;
-gap: 294px;
+gap: 18.375rem;
 padding:2rem;
 }
 
@@ -56,26 +57,36 @@ flex-direction: column;
 justify-content: center;
 align-items: flex-start;
 gap: 2rem;
-
-
 }
 
 .app__hero-button{
 display: flex;
-padding: 10px 34px;
+padding: 0.625rem 2.125rem;
 justify-content: center;
 align-items: center;
 color: #000;
 font-family: Karla;
-font-size: 18px;
+font-size: 1.125rem;
 font-style: normal;
 font-weight: 500;
 line-height: normal;
-border-radius: 8px;
+border-radius: 0.5rem;
 background: #F4CE14;
 border: none;
 outline: none;
 cursor: pointer;
+}
+
+@media screen and (max-width: 650px) {
+    .app__hero-content{
+      flex-direction: column;
+      gap:10rem;
+    }
+    .app__hero{
+        height:100%;
+        width:100%;
+    }
+
 }
 
 
