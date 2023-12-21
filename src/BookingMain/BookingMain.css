@@ -1,0 +1,75 @@
+.app__booking{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  gap:2rem;
+}
+
+.app__booking-title{
+color: #000;
+font-family: Markazi Text;
+font-size: 64px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+}
+
+.app__booking-drop{
+display: flex;
+width: 400px;
+height: 79px;
+padding: 25px 30px;
+justify-content: center;
+align-items: center;
+gap: 93px;
+flex-shrink: 0;
+border: none;
+outline: none;
+cursor: pointer;
+border-radius: 8px;
+background: #FFF;
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.app__booking-drop.selected{
+background: #495E57;
+}
+
+.app__booking-dropdown-list li{
+display: flex;
+width: 400px;
+height: 79px;
+padding: 25px 147px;
+justify-content: center;
+align-items: center;
+gap: 93px;
+flex-shrink: 0;
+border-radius: 8px;
+border-bottom: 1px solid #000;
+background: #FFF;
+cursor:pointer;
+}
+
+.app__booking-dropdown{
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+}
+
+.app__booking-drop-text{
+color: #000;
+font-family: Inter;
+font-size: 24px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+}
+
+.app__booking-drop-text.selected{
+color: #FFF;
+font-family: Inter;
+font-size: 24px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+}
