@@ -1,61 +1,59 @@
 import "./BookingMain.css";
-import WineBar from "../assets/Wine bar.svg";
-import Arrow from "../assets/Keyboard arrow down.svg";
-import ArrowUp from "../assets/Keyboard arrow up.svg";
-
-import React, { useState } from 'react';
-
-const DropdownMenu = () => {
-  const [isDropdownOpen, setDropdownOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState(null);
-  //const [isSelected, setSelected] = useState(false);
-
-  const toggleDropdown = () => {
-    setDropdownOpen(!isDropdownOpen);
-    setSelectedOption(null);
-  };
-
-  const handleOptionClick = (option) => {
-    setSelectedOption(option);
-    setDropdownOpen(false);
-  };
-
-  return (
-    <div className="app__booking-dropdown">
-      <button
-        className={`app__booking-drop ${selectedOption ? "selected" : ""}`}
-        onClick={toggleDropdown}
-      >
-        {!selectedOption && <img src={WineBar} alt="Wine Bar" />}
-        <span
-          className={`app__booking-drop-text ${
-            selectedOption ? "selected" : ""
-          }`}
-        >
-          {selectedOption || "Occasion"}
-        </span>
-        {!selectedOption && <img src={Arrow} />}
-        {selectedOption && <img src={ArrowUp} />}
-      </button>
-      {isDropdownOpen && (
-        <ul className="app__booking-dropdown-list">
-          <li onClick={() => handleOptionClick("Birthday")}>Birthday</li>
-          <li onClick={() => handleOptionClick("Engagement")}>Engagement</li>
-          <li onClick={() => handleOptionClick("Anniversary")}>Anniversary</li>
-        </ul>
-      )}
-    </div>
-  );
-};
+import BookingForm from "../BookingForm/BookingForm";
+import React, { useState, useReducer } from 'react';
+import { fetchAPI,submitAPI } from "../api/api";
 
 
 function BookingMain() {
-  return (
-   <div className="app__booking">
-    <h1 className="app__booking-title">Book your table</h1>
-    <DropdownMenu/>
+  // Function to initialize available times
+  const initializeTimes = () => {
+  try {
+    // Fetch available times for today's date
+    const today= new Date()
+    const times = fetchAPI(today)
+    return times;
+  } catch (error) {
+    console.error('Error fetching available times:', error);
+    // Handle error as needed
+    return [];
+  }
+}
+ const updateTimes = (state, action) => {
+   const { type, payload } = action;
 
-   </div>
+   switch (type) {
+     case "UPDATE_DATE":
+       // Assuming state is an array (availableTimes) that needs to be updated
+       const updatedTimes = fetchAPI(new Date(payload));
+       return updatedTimes;
+
+     // Handle other action types if needed
+     default:
+       return state;
+   }
+ };
+
+  const [availableTimes, dispatchTimes] = useReducer(
+    updateTimes,[],
+    initializeTimes
+  );
+
+
+  const handleFormSubmit = (formData) => {
+    // Handle the form submission, you can access the form data here
+    console.log("Form Data:", formData);
+    submitAPI(formData);
+
+  };
+  return (
+    <div className="app__booking">
+      <h1 className="app__booking-title">Book your table</h1>
+      <BookingForm
+        availableTimes={availableTimes}
+        dispatchTimes={dispatchTimes}
+        onFormSubmit={handleFormSubmit}
+      />
+    </div>
   );
 }
 
