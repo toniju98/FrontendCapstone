@@ -4,7 +4,7 @@ width: 100%;
 justify-content: center;
 align-items: center;
 gap: 12rem;
-padding:2rem;
+padding:1rem;
 }
 
 .app__navbar-navlinks{
@@ -67,7 +67,7 @@ flex-shrink: 0;
     color: #000000;
     font-size: 2rem;
     text-align: center;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Karla'
 }
 
 .app__navbar-smallscreen_links li:hover {

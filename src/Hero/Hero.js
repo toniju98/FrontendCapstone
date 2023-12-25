@@ -1,4 +1,5 @@
 import "./Hero.css";
+import { Link } from "react-router-dom";
 
 import exampleImage from '../assets/restauranfood 1.png';
 
@@ -15,7 +16,7 @@ function Hero() {
               traditional recipes served with a modern twist,
             </p>
           </div>
-          <button className="app__hero-button">Reserve a table</button>
+          <Link to="/booking" className="app__hero-button">Reserve a table</Link>
         </div>
         <img src={exampleImage} />
       </div>

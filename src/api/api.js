@@ -8,7 +8,6 @@ const seededRandom = (seed) => {
 
 const fetchAPI = (date) => {
   let result = [];
-  console.log(date)
   let random = seededRandom(date.getDate());
   for (let i = 17; i <= 23; i++) {
     if (random() < 0.5) result.push(i + ":00");

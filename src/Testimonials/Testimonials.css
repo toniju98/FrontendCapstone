@@ -1,21 +1,18 @@
 .app__testimonials{
-    background: #edefee;
-}
-
-
-.app__testimonials-main{
 display: flex;
-padding: 4rem;
 flex-direction: column;
-justify-content: center;
 align-items: center;
+gap:2rem;
+padding:4rem;
+padding-bottom:8rem;
 }
+
 
 .app__testimonials-main-title{
-color: #333;
+color: #000;
 /* H1 */
 font-family: Markazi Text;
-font-size: 36px;
+font-size: 2.25rem;
 font-style: normal;
 font-weight: 500;
 line-height: normal;
@@ -24,24 +21,27 @@ text-align: center;
 
 .app__testimonials-main-entries{
 display: flex;
+flex-direction: row;
 justify-content: center;
 align-items: center;
+gap:1rem
 }
 
 .app__testimonials-main-entry{
 display: flex;
-width: 342px;
-height: 190px;
-padding: 30px 100px 30px 30px;
+background: #edefee;
+width: 21.375rem;
+height: 11.875rem;
+padding: 1.875rem 6.25rem 1.875rem 1.875rem;
 flex-direction: column;
 justify-content: space-between;
 align-items: flex-start;
 }
 
 .app__testimonials-main-entry-rating{
-color: #000;
+color: #EE9972;
 font-family: Karla;
-font-size: 14px;
+font-size: 0.875rem;
 font-style: normal;
 font-weight: 700;
 line-height: normal;
@@ -57,7 +57,7 @@ align-self: stretch;
 .app__testimonials-main-entry-name{
 color: #000;
 font-family: Karla;
-font-size: 14px;
+font-size: 0.875rem;
 font-style: normal;
 font-weight: 700;
 line-height: normal;
@@ -66,8 +66,14 @@ line-height: normal;
 .app__testimonials-main-entry-review{
 color: #000;
 font-family: Karla;
-font-size: 14px;
+font-size: 0.875rem;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
+}
+
+@media screen and (max-width: 650px) {
+    .app__testimonials-main-entries{
+        flex-direction: column;
+    }
 }

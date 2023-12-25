@@ -1,4 +1,59 @@
-.app__booking-form{
-    display: flex;
-    gap: 20px;
+.app__booking-form {
+  display: flex;
+  flex-direction: column;
+  gap:1rem;
+}
+
+.form-group{
+  display: flex;
+  flex-direction: column;
+}
+
+.app__booking-form label {
+  margin-bottom: 0.313rem;
+  font-family:'Karla';
+  font-size: 1.125rem; /* Adjust the font size as needed */
+  font-weight: bold; /* Add or modify font-weight if desired */
+  margin-bottom: 0.5rem; /* Adjust the margin bottom for spacing */
+  color: #333; /* Change the color as needed */
+  /* Add any other label styles you want to customize */
+
+}
+
+.app__booking-form input,
+.app__booking-form select {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.app__booking-form input[type="submit"] {
+display: flex;
+padding: 0.625rem 2.125rem;
+justify-content: center;
+align-items: center;
+color: #000;
+font-family: Karla;
+font-size: 1.125rem;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+border-radius: 0.5rem;
+background: #F4CE14;
+border: none;
+outline: none;
+cursor: pointer;
+}
+
+.app__booking-form input[type="submit"]:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.confirmation-message{
+color: #000;
+font-family: Karla;
+font-size: 1.125rem;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
 }

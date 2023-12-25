@@ -1,0 +1,67 @@
+.app__chicago{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding:4rem;
+    background: #495E57;
+}
+
+.app__chicago-textbox{
+    display:flex;
+    flex-direction: column;
+    width:373px;
+}
+
+.app__chicago-textbox-header{
+color: #F4CE14;
+/* #495E57;*/
+font-family: Markazi Text;
+font-size: 4rem;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+}
+
+.app__chicago-textbox-subheader{
+color: #FFF;
+font-family: Markazi Text;
+font-size: 2.5rem;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.app__chicago-textbox-text{
+color: #FFF;
+text-align: justify;
+font-family: Karla;
+font-size: 1.25rem;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+
+.app__chicago img{
+    width:30rem;
+    height:30rem;
+}
+
+
+
+@media screen and (max-width: 650px) {
+    .app__chicago{
+        flex-direction: column;
+        gap:2rem;
+        padding:2rem;
+        align-items: center;
+    }
+    .app__chicago img{
+    width:20rem;
+    height:20rem;
+}
+
+.app__chicago-textbox{
+    width: 100%;
+}
+
+}

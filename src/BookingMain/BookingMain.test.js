@@ -1,36 +1,35 @@
-import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
-import { initializeTimes, updateTimes } from "./yourBookingUtils"; // Update with the correct import path
-import { fetchAPI } from "./api"; // Update with the correct import path
+import { render, fireEvent } from "@testing-library/react";
+import BookingMain from "./BookingMain";
+import * as api from "../api/api";
 
-//TODO: create Extra file with the functions
+// Mock the fetchAPI function
+jest.mock("../api/api");
 
-// Mock the fetchAPI function to return a non-empty array for testing purposes
-jest.mock("./api", () => ({
-  fetchAPI: jest.fn(() => [
-    "17:00",
-    "18:00",
-    "19:00",
-    "20:00",
-    "21:00",
-    "22:00",
-  ]),
-}));
+test("initializeTimes fetches and displays available times", async() => {
+  const { findByLabelText } = render(<BookingMain />);
 
-describe("Booking Utils", () => {
-  // Update the test for initializeTimes
-  test("initializeTimes returns non-empty array", async () => {
-    const times = await initializeTimes();
-    expect(times.length).toBeGreaterThan(0);
-  });
+  // Wait for the component to fetch and render
+  const timeSelect = await findByLabelText("Choose time");
 
-  // Update the test for updateTimes
-  test("updateTimes returns non-empty array with selected date", async () => {
-    const selectedDate = new Date("2023-12-27");
-    const times = await updateTimes({
-      type: "UPDATE_DATE",
-      payload: selectedDate,
-    });
-    expect(times.length).toBeGreaterThan(0);
-  });
+  // Check if the available times are displayed in the dropdown
+  expect(timeSelect).toBeInTheDocument();
+});
+
+test("updateTimes updates available times on date change", () => {
+  api.fetchAPI.mockReturnValue(["17:00", "18:00"]);
+  const { getByLabelText } = render(<BookingMain />);
+
+  // Simulate a date change
+  const dateInput = getByLabelText("Choose date");
+  fireEvent.change(dateInput, { target: { value: "2024-01-01" } });
+
+  // Access the availableTimes state after the date change
+  // Access the availableTimes state after the date change
+  const availableTimesElement = getByLabelText("Choose time");
+  const availableTimes = Array.from(availableTimesElement.options).map(
+    (option) => option.value
+  );
+
+  // Check if the times are updated
+  expect(availableTimes).toEqual(["17:00", "18:00"]);
 });

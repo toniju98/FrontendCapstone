@@ -1,24 +1,28 @@
 .app__specials{
 display: flex;
 flex-direction: column;
-justify-content: center;
+justify-content: space-between;
 align-items: center;
-padding: 10rem 20rem;
+padding-left:20rem;
+padding-right: 20rem;
+padding-top:8rem;
+padding-bottom:4rem;
 gap:2rem;
 }
 
 .app__specials-header{
 display: flex;
+flex-direction: row;
+width:100%;
 justify-content: space-between;
 align-items: center;
-align-self:stretch;
 }
 
 .app__specials-main{
 display: flex;
+width:100%;
 flex-direction: row;
 align-items: center;
-align-self:stretch;
 justify-content: space-between;}
 
 .app__specials-menuItem{
@@ -30,22 +34,23 @@ align-items: center;
 
 .app__specials-menuItem-text{
 display: flex;
-padding: 23px 15px;
+background:#edefee;
+padding: 1.438rem 0.938rem;
 flex-direction: column;
 justify-content: center;
 align-items: flex-start;
-gap: 30px;
+gap: 1.875rem;
 }
 
 .app__specials-menuItem-titlePrice{
 display: flex;
 align-items: center;
-gap: 60px;}
+gap: 3.75rem;}
 
 .app__specials-menuItem-title{
 color: #000;
 font-family: Markazi Text;
-font-size: 24px;
+font-size: 1.5rem;
 font-style: normal;
 font-weight: 500;
 line-height: normal;
@@ -54,7 +59,7 @@ line-height: normal;
 .app__specials-menuItem-price{
 color: #EE9972;
 font-family: Karla;
-font-size: 16px;
+font-size: 1rem;
 font-style: normal;
 font-weight: 700;
 line-height: normal;
@@ -63,23 +68,23 @@ line-height: normal;
 .app__specials-menuItem-paragraph{
 color: #495E57;
 font-family: Karla;
-font-size: 16px;
+font-size: 1rem;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
-width: 235px;
+width: 14.688rem;
 }
 
 .app__specials-menuItem-delivery{
 display: flex;
 align-items: center;
-gap: 10px;
+gap: 0.625rem;
 }
 
 .app__specials-menuItem-deliveryText{
 color: #000;
 font-family: Karla;
-font-size: 16px;
+font-size: 1rem;
 font-style: normal;
 font-weight: 700;
 line-height: normal;
@@ -88,25 +93,46 @@ line-height: normal;
 .app__specials-header-title{
 color: #000;
 font-family: Karla;
-font-size: 40px;
+font-size: 2.5rem;
 font-style: normal;
 font-weight: 500;
 line-height: normal;
 }
 
 .app__specials-header-button{
-padding: 19px 34px;
+padding: 1.188rem 2.125rem;
 justify-content: center;
 align-items: center;
 color: #000;
 font-family: Karla;
-font-size: 18px;
+font-size: 1.125rem;
 font-style: normal;
 font-weight: 500;
 line-height: normal;
-border-radius: 8px;
+border-radius: 0.5rem;
 background: #F4CE14;
 border: none;
 outline: none;
 cursor: pointer;
+}
+
+@media screen and (max-width: 650px) {
+     .app__specials{
+    padding:2rem;}
+    .app__specials-main{
+        flex-direction: column;
+        align-items: center;
+        gap:2rem;
+    }
+
+    .app__specials-header{
+    flex-direction: column;
+    align-items: center;
+    gap:1rem;
+}
+
+.app__specials-header-title{
+  text-align:center;
+}
+
 }

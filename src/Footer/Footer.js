@@ -1,32 +1,33 @@
 import "./Footer.css";
-
+import { Link } from "react-router-dom";
 import Logo from "../assets/Logo.svg";
 
 function Footer() {
   return (
     <footer className="app__footer">
-      <img src={Logo} />
+      <Link to="/">
+      <img src={Logo}/></Link>
       <div className="app__footer-textMenu">
         <div className="app__footer-navigation">
           <h2 className="app__footer-header">Navigation</h2>
           <ul className="app__footer-subtext">
             <li>
-              <a href="/home">Home</a>
+              <Link to="/home">Home</Link>
             </li>
             <li>
-              <a href="/about">About</a>
+              <Link to="/about">About</Link>
             </li>
             <li>
-              <a href="/menu">Menu</a>
+              <Link to="/menu">Menu</Link>
             </li>
             <li>
-              <a href="/reservations">Reservations</a>
+              <Link to="/reservations">Reservations</Link>
             </li>
             <li>
-              <a href="/order-online">Order online</a>
+              <Link to="/order-online">Order online</Link>
             </li>
             <li>
-              <a href="/login">Login</a>
+              <Link to="/login">Login</Link>
             </li>
           </ul>
         </div>
@@ -35,13 +36,13 @@ function Footer() {
           <h2 className="app__footer-header">Contact</h2>
           <ul className="app__footer-subtext">
             <li>
-              <a href="/home">Address</a>
+              <Link to="/home">Address</Link>
             </li>
             <li>
-              <a href="/about">Phone Number</a>
+              <Link to="/about">Phone Number</Link>
             </li>
             <li>
-              <a href="/menu">Email</a>
+              <Link to="/menu">Email</Link>
             </li>
           </ul>
         </div>

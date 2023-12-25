@@ -1,6 +1,7 @@
 import "./Specials.css";
 import GreekSalad from "../assets/greek salad 1.png";
 import Delivery from "../assets/Delivery dining.svg";
+import { Link } from "react-router-dom";
 
 
 
@@ -32,7 +33,7 @@ function Specials() {
     <section className="app__specials">
       <div className="app__specials-header">
         <h2 className="app__specials-header-title">This weeks specials!</h2>
-        <button className="app__specials-header-button">Reserve a table</button>
+        <Link to="/booking" className="app__specials-header-button">Reserve a table</Link>
       </div>
       <div className="app__specials-main">
       <MenuItem />

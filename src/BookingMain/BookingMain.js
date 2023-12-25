@@ -1,6 +1,6 @@
 import "./BookingMain.css";
 import BookingForm from "../BookingForm/BookingForm";
-import React, { useState, useReducer } from 'react';
+import React, { useReducer } from 'react';
 import { fetchAPI,submitAPI } from "../api/api";
 
 
@@ -11,7 +11,7 @@ function BookingMain() {
     // Fetch available times for today's date
     const today= new Date()
     const times = fetchAPI(today)
-    return times;
+    return times || [];
   } catch (error) {
     console.error('Error fetching available times:', error);
     // Handle error as needed
@@ -46,14 +46,14 @@ function BookingMain() {
 
   };
   return (
-    <div className="app__booking">
+    <section className="app__booking">
       <h1 className="app__booking-title">Book your table</h1>
       <BookingForm
         availableTimes={availableTimes}
         dispatchTimes={dispatchTimes}
         onFormSubmit={handleFormSubmit}
       />
-    </div>
+    </section>
   );
 }
 

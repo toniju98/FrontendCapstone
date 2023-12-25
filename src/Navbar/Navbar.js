@@ -8,7 +8,9 @@ function Navbar() {
   const [toggleMenu, setToggleMenu] = React.useState(false);
   return (
     <nav className="app__navbar">
-      <img src={Logo} />
+      <Link to="/">
+        <img src={Logo} />
+      </Link>
       <ul className="app__navbar-navlinks">
         <li>
           <Link to="/">Home</Link>
@@ -44,19 +46,34 @@ function Navbar() {
             />
             <ul className="app__navbar-smallscreen_links">
               <li>
-                <a href="/" onClick={() => setToggleMenu(false)}>
+                <Link to="/" onClick={() => setToggleMenu(false)}>
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/about-us" onClick={() => setToggleMenu(false)}>
-                  Über uns
-                </a>
+                <Link to="/about" onClick={() => setToggleMenu(false)}>
+                  About
+                </Link>
               </li>
               <li>
-                <a href="/contact" onClick={() => setToggleMenu(false)}>
-                  Contact
-                </a>
+                <Link to="/menu" onClick={() => setToggleMenu(false)}>
+                  Menu
+                </Link>
+              </li>
+              <li>
+                <Link to="/booking" onClick={() => setToggleMenu(false)}>
+                  Reservations
+                </Link>
+              </li>
+              <li>
+                <Link to="/order-online" onClick={() => setToggleMenu(false)}>
+                  Order online
+                </Link>
+              </li>
+              <li>
+                <Link to="/login" onClick={() => setToggleMenu(false)}>
+                  Login
+                </Link>
               </li>
             </ul>
           </div>
